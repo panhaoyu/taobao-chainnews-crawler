@@ -13,9 +13,11 @@ def process(data):
     if not source.exists():
         with open(source, encoding='utf-8', mode='w') as file:
             file.write(content)
-    pypandoc.convert_file(str(source), format='html', to='docx',
-                          outputfile=str(target))
-    print(target.name)
+    try:
+        pypandoc.convert_file(str(source), format='html', to='docx',
+                              outputfile=str(target))
+    except:
+        print(f'Failed: {target.name}')
 
 
 def main():
