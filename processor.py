@@ -21,7 +21,7 @@ def process(data):
 
 
 def main():
-    book = openpyxl.load_workbook('chainnews-archive-508-966.xlsx', read_only=True)
+    book = openpyxl.load_workbook('chainnews-archive-1-507.xlsx', read_only=True)
     sheet = book.get_sheet_by_name(book.sheetnames[0])
     headers = [cell.value for cell in sheet['A1:Z1'][0]]
     title_index = headers.index('title')
